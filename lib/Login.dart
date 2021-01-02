@@ -38,9 +38,11 @@ class MyForm extends StatefulWidget{
 }
 
 class _MyFormState extends State<MyForm> {
-
   final _formKey = GlobalKey<FormState>();
-
+  String name="";
+  String email="";
+  String phone="";
+  String address="";
 
   @override
   Widget build(BuildContext context) {
@@ -133,6 +135,7 @@ class _MyFormState extends State<MyForm> {
                                   if (value.isEmpty) {
                                     return 'Please enter some text';
                                   }
+                                  name=value;
                                   return null;
                                 },
                                 decoration: InputDecoration(
@@ -160,7 +163,7 @@ class _MyFormState extends State<MyForm> {
                                     {
                                       return "Please enter valid email";
                                     }
-
+                                    email =value;
                                   return null;
                                 },
                                 decoration: InputDecoration(
@@ -186,6 +189,7 @@ class _MyFormState extends State<MyForm> {
                                   if (value.length>10 || value.length<10) {
                                     return 'Please enter valid number';
                                   }
+                                  phone=value;
                                   return null;
                                 },
                                 decoration: InputDecoration(
@@ -208,6 +212,7 @@ class _MyFormState extends State<MyForm> {
                                   if (value.isEmpty) {
                                     return 'Please enter some text';
                                   }
+                                  address=value;
                                   return null;
                                 },
                                 decoration: InputDecoration(
@@ -224,7 +229,7 @@ class _MyFormState extends State<MyForm> {
                                         onPressed: () {
                                               if (_formKey.currentState.validate()) {
                                               // If the form is valid, display a Snackbar.
-                                            Navigator.push(context, MaterialPageRoute(builder: (context) => Home(),));
+                                            Navigator.push(context, MaterialPageRoute(builder: (context) => Home(name,phone,email,address),));
                                               }
                                               },
 
