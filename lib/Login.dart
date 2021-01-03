@@ -1,8 +1,8 @@
+
 import 'package:flutter/material.dart';
 import 'package:first_app/Home.dart';
-void main() {
-  runApp(Login());
-}
+import 'package:first_app/Login_user.dart';
+
 
 class Login extends StatefulWidget{
   @override
@@ -84,7 +84,7 @@ class _MyFormState extends State<MyForm> {
                         padding: EdgeInsets.all(20),
                         child: Center(
                             child: Text(
-                              "Login",
+                              "Sign Up",
                               style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 30),
                             )
                         ),
@@ -268,7 +268,7 @@ class _MyFormState extends State<MyForm> {
                                   ),
                                   onTap: ()
                                   {
-                                    Scaffold.of(context).showSnackBar(SnackBar(content: Text("Working"),));
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) => Login_user() ,));
                                   },
                                 ),
                               ],

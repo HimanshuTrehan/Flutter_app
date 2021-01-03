@@ -56,7 +56,7 @@ class _HomeState extends State<Home>{
                    DataCell(Text(widget.phone)),
                    DataCell(Text(widget.address)),
                  ]),
-                 
+
                ])
          ],
        ),
