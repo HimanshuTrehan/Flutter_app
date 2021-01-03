@@ -133,7 +133,7 @@ class _LoginFormState extends State<LoginForm>{
                               onPressed: () {
                                 if(_formKey.currentState.validate())
                                   {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) => Home(name, phone, email, address) ,));
+                                      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Home(name, phone, email, address),), (route) => false);
                                   }
                               },
 
