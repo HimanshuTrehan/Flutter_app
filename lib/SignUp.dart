@@ -4,7 +4,7 @@ import 'package:first_app/Home.dart';
 import 'package:first_app/Login_user.dart';
 
 
-class Login extends StatefulWidget{
+class SignUp extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
     return _LoginState();
@@ -12,7 +12,7 @@ class Login extends StatefulWidget{
 
 }
 
-class _LoginState extends State<Login>{
+class _LoginState extends State<SignUp>{
 
   @override
   Widget build(BuildContext context) {
@@ -52,24 +52,31 @@ class _MyFormState extends State<MyForm> {
          child: Container(
         height: double.infinity,
         width: double.infinity,
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.centerLeft,
-                end: Alignment.centerRight,
-                colors: [Colors.purple, Colors.blue])),
+           decoration: BoxDecoration(
+               gradient: LinearGradient(
+                   begin: Alignment.centerLeft,
+                   end: Alignment.centerRight,
+                   colors: [Colors.green, Colors.blue])
+           ),
         child: SingleChildScrollView(
           child: Column(
-            
             children: [
               Row(
 
                 children: [
 
-                  Container(
-                    child: Padding(
-                        padding: EdgeInsets.all(10),
-                        child: Icon(Icons.arrow_back_ios)),
+                  GestureDetector(
+                    child: Container(
+                      child: Padding(
+                          padding: EdgeInsets.all(20),
+                          child: Icon(Icons.arrow_back_ios)),
+                    ),
+                    onTap: ()
+                    {
+                      Navigator.pop(context);
+                    },
                   ),
+                  
 
 
                 ],
